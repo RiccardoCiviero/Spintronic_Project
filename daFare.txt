@@ -1,0 +1,10 @@
+P1
+controlla se mettere la sorgente in -l/4 da quache problema (sarebbe comodo per P3 poterlo fare)
+
+
+P2
+
+
+P3
+inietta una sola frequenza alla volta e vedi che succede (plotta mx(t), my(t), mz(t) prima del transvers field, nel TF e dopo il TF)
+butta un occhio sulle dispersioni

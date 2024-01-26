@@ -1,0 +1,1 @@
+conversione 1/m to rad/micrometer... non torna per un fattore 20

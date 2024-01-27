@@ -1,10 +1,13 @@
 P1
-controlla se mettere la sorgente in -l/4 da quache problema (sarebbe comodo per P3 poterlo fare)
+-controlla se mettere la sorgente in -l/4 da quache problema (sarebbe comodo per P3 poterlo fare)
 
 
 P2
-
+-supponendo dispersione=a*(BV)+(1-a)(DE), fare la curva a(Hy)
 
 P3
-inietta una sola frequenza alla volta e vedi che succede (plotta mx(t), my(t), mz(t) prima del transvers field, nel TF e dopo il TF)
-butta un occhio sulle dispersioni
+-inietta una sola frequenza alla volta e vedi che succede (plotta mx(t), my(t), mz(t) prima del transvers field, nel TF e dopo il TF)
+-butta un occhio sulle dispersioni in generale
+-assorbanza della cavità (o trasmittanza) al variare di kx (mi aspetto risonanze per lunghezze confrontabili con il campo trasversale)
+    *qui potremmo plottare mx(x), my(x) e mz(z) rispetto al loro valore medio e far vedere che dopo il campo "barriera" lampiezza delle oscillazioni scende scende
+-se fai una simulazione con Hy molto alto e fai la fourier della metà destra vedi la dispersione delle onde trasmesse e sulla meà di sinistra vedi 2 bande (onde incidenti e onde riflesse)

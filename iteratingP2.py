@@ -9,56 +9,43 @@ import pandas as pd
 import matplotlib.colors as colors
 import os
 
+# Initial magnetization
+m0 = (1, 0, 0)   # Initial reduced magnetization
+Hx=550 * Oe
+Hy_list=[(n+11)*50*Oe for n in range(10)]
+Hz=0
 
 
 # Conversion factors
 Oe = 1000/(4*np.pi)     # conversion Oe->A/m 79.577471/ 1 mT->10 Oe
-
 # magnetic parametes
 alpha_YIG = 1.75e-4    # Gilbert damping (-)
-
 Ms_YIG = 140.7e3           # Saturation magnetisation (A/m). 
-
 A_YIG = 4.22e-12           # Exchange stiffness (J/m)
-
 l_ex = (2*A_YIG/(mm.consts.mu0*Ms_YIG**2)) # Exchange length (m)
-
 a_YIG=1.2373e-9  #YIG lattice parameter
 BZ=2*np.pi/a_YIG
-
 # Geometry [m]
 l = 60e-6
 w = 500e-9
 t = 50e-9
-
 # self absorbing boundary condition
 band = 1e-6
-
+#source
 sourceWidth=600e-9 #cercare bene la misura sul righello
 sourcePos=-l/4 #almeno iniettiamo le waves nel bulk, possiamo modificare
-
 # Mesh cell [m]
 cx = 10e-9   #50e-9
 cy = w  #50e-9
 cz = t
-
 cell = (cx, cy, cz)
 
-# Initial magnetization
-m0 = (1, 0, 0)   # Initial reduced magnetization
-
-Hx=550 * Oe
-Hy_list=[(n+1)*50*Oe for n in range(10)]
-Hz=0
 
 # Amplitude of RF exiting field
 H_RF_val=10 * Oe
 
-
-
 mn = oc.MinDriver()           # minimization driver
 td = oc.TimeDriver()          # time driver
-
 
 T = 100e-9 #100e-9
 f_MAX = 10e9
@@ -235,6 +222,26 @@ def getDispersions(m_fft_x,m_fft_y,m_fft_z):
 
     plt.savefig(f'{sysName}/images/F(mz).png', bbox_inches='tight')
 
+def saveParams(sysName, Hy):
+    with open(f"{sysName}/params.txt",'w') as f:
+        if cy==w and cz==t:
+            f.write(f"cell=({cx},w,t)\n")
+        elif cy==w:
+            f.write(f"cell=({cx},w,{cz})\n")
+        elif cz==t:
+            f.write(f"cell=({cx},{cy},t)\n")
+        else:
+            f.write(f"cell=({cx},{cy},{cz})")
+        f.write("\n")
+        f.write("Bias field:\n")
+        f.write(f"Hx={Hx/Oe}Oe\n")
+        f.write(f"Hy={Hy/Oe}Oe\n")
+        f.write(f"Hz={Hz/Oe}Oe\n")
+        f.write("\n")
+        f.write("Exitation field:\n")
+        f.write(f"Amplitude={H_RF_val/Oe}Oe\n")
+        f.write(f"f_MAX={f_MAX}\n")
+
 for Hy in Hy_list:
     sysName=f"P2_{int(T*1e9)}ns_{int(f_MAX*1e-9)}GHz_{int(Hy/Oe)}Oe"
     system, region, mesh, alpha = defSys()
@@ -250,4 +257,5 @@ for Hy in Hy_list:
     injectRF(mesh,system)
     m_fft_x, m_fft_y, m_fft_z=dataProcessing()
     getDispersions(m_fft_x, m_fft_y, m_fft_z)
+    saveParams(sysName, Hy)
     plt.close('all')

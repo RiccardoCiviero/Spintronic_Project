@@ -9,15 +9,19 @@ import pandas as pd
 import matplotlib.colors as colors
 import os
 
+# Conversion factors
+Oe = 1000/(4*np.pi)     # conversion Oe->A/m 79.577471/ 1 mT->10 Oe
+
 # Initial magnetization
 m0 = (1, 0, 0)   # Initial reduced magnetization
 Hx=550 * Oe
-Hy_list=[(n+11)*50*Oe for n in range(10)]
+#Hy_list=[(n+11)*50*Oe for n in range(10)]
 Hz=0
+Hy_list = [250, 500, 550, 600, 1000, 2000, 4000, 6000, 8000, 11000, 16000]
+Hy_list = [Hy * Oe for Hy in Hy_list]
 
 
-# Conversion factors
-Oe = 1000/(4*np.pi)     # conversion Oe->A/m 79.577471/ 1 mT->10 Oe
+
 # magnetic parametes
 alpha_YIG = 1.75e-4    # Gilbert damping (-)
 Ms_YIG = 140.7e3           # Saturation magnetisation (A/m). 

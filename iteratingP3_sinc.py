@@ -50,7 +50,7 @@ mn = oc.MinDriver()           # minimization driver
 td = oc.TimeDriver()          # time driver
 
 T = 100e-9 #100e-9
-f_MAX = 10e9
+f_MAX = 4e9
 
 f_Nyquist = 2*f_MAX
 n_Nyquist = T*f_Nyquist
@@ -157,7 +157,7 @@ def Hspace_RF(point):
 
 def injectRF(mesh, system):
     H_RF = df.Field(mesh, nvdim=3, value=Hspace_RF)
-    zemRF = mm.Zeeman(H=H_RF, func='sinc', f=f_MAX, t0=T/sampling, name='RF')
+    zemRF = mm.Zeeman(H=H_RF, func='sin', f=f_MAX, t0=T/sampling, name='RF')
     try:
         system.energy += zemRF
     finally:

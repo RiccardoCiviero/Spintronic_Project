@@ -1,1 +1,22 @@
-conversione 1/m to rad/micrometer... non torna per un fattore 20
+P1
+conversione 1/m to rad/micrometer... non torna per un fattore 2
+antenna -> va bene? la mettiamo?
+considerazione su energia shift
+
+Abbiamo fatto: pos antenna, antenna realistica, high order, baseline per P3
+
+
+P2
+capire se possiamo scrivere come combinazione lineare
+
+
+
+P3
+come gestire assorbimento e trasmissione
+
+
+
+Generali
+estrarre curve da dispersioni -> assorbimento (\omega batch) e per derivare -> vg ecc 
+valori di campo, dimensioni antenna, posizionamento ecc
+ha sesnso trascurare i vari termini energetici?

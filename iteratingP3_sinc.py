@@ -404,6 +404,10 @@ Ty1=[]
 Ty2=[]
 Tz1=[]
 Tz2=[]
+
+with open(f"./Transmissions.csv",'a') as f:
+    f.write(f"Transverse field,Frequency,T1z,T1y,T2z,T2y\n")
+
 for freq in f_MAX_list:
     for Hy_t in Hy_list:
         
@@ -447,13 +451,22 @@ for freq in f_MAX_list:
         getTimeEvol("center")
         getSpaceEvol(mx0,my0,mz0)
         a,b,c,d=getTramissions((my_BL,mz_BL))
-        with open(f"./Transmissions.txt",'a') as f:
-            f.write(f"Transverse field=:{Hy_t}\n")
-            f.write(f"frequency={freq}\n")
-            f.write(f"T1z={a}\n")
-            f.write(f"T1y={b}\n")
-            f.write(f"T2z={c}\n")
-            f.write(f"T2y={d}\n")
-            f.write("\n\n")
+        a = float(a)
+        b = float(b)
+        c = float(c)
+        d = float(d)
+        with open(f"./Transmissions.csv",'a') as f:
+            f.write(f"{Hy_t},{freq},{a},{b},{c},{d}\n")
+      
+      
+      
+        # with open(f"./Transmissions.txt",'a') as f:
+        #     f.write(f"Transverse field=:{Hy_t}\n")
+        #     f.write(f"frequency={freq}\n")
+        #     f.write(f"T1z={a}\n")
+        #     f.write(f"T1y={b}\n")
+        #     f.write(f"T2z={c}\n")
+        #     f.write(f"T2y={d}\n")
+        #     f.write("\n\n")
         saveParams(sysName, Hy)
         plt.close('all')

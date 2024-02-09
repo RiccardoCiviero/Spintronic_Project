@@ -16,7 +16,7 @@ Oe = 1000/(4*np.pi)     # conversion Oe->A/m 79.577471/ 1 mT->10 Oe
 m0 = (1, 0, 0)   # Initial reduced magnetization
 Hx=550 * Oe
 Hy=0
-Hy_list = [250, 500, 550, 600, 1000, 2000, 4000, 6000, 8000, 11000, 16000]
+Hy_list = [0, 50, 250, 550, 1100, 2200]
 Hy_list = [Hy * Oe for Hy in Hy_list]
 Hz=0
 
@@ -51,7 +51,7 @@ td = oc.TimeDriver()          # time driver
 
 T = 100e-9 #100e-9
 f_MAX = 4e9
-
+f_MAX_list=[3.2e9, 3.5e9, 3.8e9, 4e9]
 f_Nyquist = 2*f_MAX
 n_Nyquist = T*f_Nyquist
 n_oversampling = 50
@@ -155,9 +155,9 @@ def Hspace_RF(point):
         return (0,0,0)
 
 
-def injectRF(mesh, system):
+def injectRF(mesh, system, freq=f_MAX):
     H_RF = df.Field(mesh, nvdim=3, value=Hspace_RF)
-    zemRF = mm.Zeeman(H=H_RF, func='sin', f=f_MAX, t0=T/sampling, name='RF')
+    zemRF = mm.Zeeman(H=H_RF, func='sin', f=freq, t0=T/sampling, name='RF')
     try:
         system.energy += zemRF
     finally:
@@ -330,6 +330,20 @@ def getTimeEvol(side):
 
     return mx1[0], my1[0], mz1[0]
 
+def getTramissions(baseline):
+    data=md.Data(sysName) #this contains all the drives up to now. [-1] means the last drive. Check the folder "Py_disk_FMR"
+    array=data[-1].to_xarray()
+    mz1_left=array[:, int((3/8*l)/cx), int(w/2/cy), 0, 2]
+    my1_left=array[:, int((3/8*l)/cx), int(w/2/cy), 0, 1]
+    mz1_right=array[:, int((5/8*l)/cx), int(w/2/cy), 0, 2]
+    my1_right=array[:, int((5/8*l)/cx), int(w/2/cy), 0, 1]
+    T1z=np.max(mz1_right)**2/np.max(mz1_left)**2
+    T1y=np.max(my1_right)**2/np.max(my1_left)**2
+    my_BL, mz_BL=baseline
+    T2z=np.max(mz1_right)**2/mz_BL**2
+    T2y=np.max(my1_right)**2/my_BL**2
+    return T1z, T1y, T2z, T2y   
+
 def getSpaceEvol(mx0,my0,mz0):
     numCells=int((l-2*band)/cx)
     space= np.linspace(-l/2+band,l/2-band,numCells)
@@ -386,42 +400,60 @@ def getSpaceEvol(mx0,my0,mz0):
     plt.plot(f_axis/1e9, amp)
     plt.savefig(f"{sysName}/images/mz(x)_fft")
 
+Ty1=[]
+Ty2=[]
+Tz1=[]
+Tz2=[]
+for freq in f_MAX_list:
+    for Hy_t in Hy_list:
+        
+        sysName=f"P3_{int(T*1e9)}ns_{int(freq*1e-6)}kHz_{int(Hy_t/Oe)}Oe"
+        system, region, mesh, alpha = defSys()
 
-for Hy_t in Hy_list:
-    sysName=f"P3_{int(T*1e9)}ns_{int(f_MAX*1e-9)}GHz_{int(Hy_t/Oe)}Oe"
-    system, region, mesh, alpha = defSys()
+        def Hspace_DC(point):
+            transverseFieldSize = 0.5e-6
+            x, y, z = point
+            if (-transverseFieldSize/2 < x < transverseFieldSize/2 and -w/2 < y < w/2 and 0 < z < t):
+                return (0, Hy_t, 0)
+            else:
+                return (0, 0, 0)
 
-    def Hspace_DC(point):
-        transverseFieldSize = 0.5e-6
-        x, y, z = point
-        if (-transverseFieldSize/2 < x < transverseFieldSize/2 and -w/2 < y < w/2 and 0 < z < t):
-            return (0, Hy_t, 0)
-        else:
-            return (0, 0, 0)
+        H_transverse = df.Field(mesh, nvdim=3, value=Hspace_DC)
+        sysEnergy(Hx,Hy,Hz,H_transverse,system)
+        getEq(system)
+        directory="images"
+        parentDir=f"{sysName}"
+        path=os.path.join(parentDir,directory)
 
-    H_transverse = df.Field(mesh, nvdim=3, value=Hspace_DC)
-    sysEnergy(Hx,Hy,Hz,H_transverse,system)
-    getEq(system)
-    directory="images"
-    parentDir=f"{sysName}"
-    path=os.path.join(parentDir,directory)
-
-    if not os.path.isdir(path):
-        os.mkdir(path)
-    checkSys(system)
-    injectRF(mesh,system)
-    m_fft_x, m_fft_y, m_fft_z=dataProcessing()
-    getDispersions(m_fft_x, m_fft_y, m_fft_z)
-    m_fft_x, m_fft_y, m_fft_z=dataProcessing("left")
-    getDispersions(m_fft_x, m_fft_y, m_fft_z,"left")
-    mx0,my0,mz0=getTimeEvol("left")
-    m_fft_x, m_fft_y, m_fft_z=dataProcessing("right")
-    getDispersions(m_fft_x, m_fft_y, m_fft_z,"right")
-    getTimeEvol("right")
-    m_fft_x, m_fft_y, m_fft_z=dataProcessing("center")
-    getDispersions(m_fft_x, m_fft_y, m_fft_z,"center")
-    getTimeEvol("center")
-    getSpaceEvol(mx0,my0,mz0)
-    
-    saveParams(sysName, Hy)
-    plt.close('all')
+        if not os.path.isdir(path):
+            os.mkdir(path)
+        checkSys(system)
+        injectRF(mesh,system,freq)
+        if Hy_t==0:
+            data=md.Data(sysName) #this contains all the drives up to now. [-1] means the last drive. Check the folder "Py_disk_FMR"
+            array=data[-1].to_xarray()
+            mz_BL=np.max(array[:, int((3/8*l)/cx), int(w/2/cy), 0, 2])
+            my_BL=np.max(array[:, int((3/8*l)/cx), int(w/2/cy), 0, 1])
+        m_fft_x, m_fft_y, m_fft_z=dataProcessing()
+        getDispersions(m_fft_x, m_fft_y, m_fft_z)
+        m_fft_x, m_fft_y, m_fft_z=dataProcessing("left")
+        getDispersions(m_fft_x, m_fft_y, m_fft_z,"left")
+        mx0,my0,mz0=getTimeEvol("left")
+        m_fft_x, m_fft_y, m_fft_z=dataProcessing("right")
+        getDispersions(m_fft_x, m_fft_y, m_fft_z,"right")
+        getTimeEvol("right")
+        m_fft_x, m_fft_y, m_fft_z=dataProcessing("center")
+        getDispersions(m_fft_x, m_fft_y, m_fft_z,"center")
+        getTimeEvol("center")
+        getSpaceEvol(mx0,my0,mz0)
+        a,b,c,d=getTramissions((my_BL,mz_BL))
+        with open(f"./Transmissions.txt",'a') as f:
+            f.write(f"Transverse field=:{Hy_t}\n")
+            f.write(f"frequency={freq}\n")
+            f.write(f"T1z={a}\n")
+            f.write(f"T1y={b}\n")
+            f.write(f"T2z={c}\n")
+            f.write(f"T2y={d}\n")
+            f.write("\n\n")
+        saveParams(sysName, Hy)
+        plt.close('all')

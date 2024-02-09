@@ -17,9 +17,8 @@ m0 = (1, 0, 0)   # Initial reduced magnetization
 Hx=550 * Oe
 #Hy_list=[(n+11)*50*Oe for n in range(10)]
 Hz=0
-Hy_list = [250, 500, 550, 600, 1000, 2000, 4000, 6000, 8000, 11000, 16000]
+Hy_list = [5500]
 Hy_list = [Hy * Oe for Hy in Hy_list]
-
 
 
 # magnetic parametes
@@ -52,7 +51,7 @@ mn = oc.MinDriver()           # minimization driver
 td = oc.TimeDriver()          # time driver
 
 T = 100e-9 #100e-9
-f_MAX = 10e9
+f_MAX = 15e9
 
 f_Nyquist = 2*f_MAX
 n_Nyquist = T*f_Nyquist
@@ -199,8 +198,8 @@ def getDispersions(m_fft_x,m_fft_y,m_fft_z):
             aspect='auto', origin='lower', norm=colors.CenteredNorm(vcenter=22), cmap="inferno")
     plt.ylabel("$f$ (Hz)")
     plt.xlabel("$kx$ (1/m)")
-    plt.xlim([0, 1/cx])
-    plt.ylim([0, f_MAX])
+    plt.xlim([-10e6, 10e6])
+    plt.ylim([3e9, f_MAX])
     plt.savefig(f'{sysName}/images/F(mx).png', bbox_inches='tight')
 
     #my
@@ -211,8 +210,8 @@ def getDispersions(m_fft_x,m_fft_y,m_fft_z):
             aspect='auto', origin='lower', cmap="inferno")
     plt.ylabel("$f$ (Hz)")
     plt.xlabel("$kx$ (1/m)")
-    plt.xlim([0, 25e6])
-    plt.ylim([0, f_MAX])
+    plt.xlim([-10e6, 10e6])
+    plt.ylim([3e9, f_MAX])
     plt.savefig(f'{sysName}/images/F(my).png', bbox_inches='tight')
 
     #mz
@@ -221,6 +220,8 @@ def getDispersions(m_fft_x,m_fft_y,m_fft_z):
     extent = [-1/cx, 1/cx, -f_MAX, f_MAX]  # extent of k values and frequencies
     plt.imshow(np.log(np.abs(m_fft_z)**2), extent=extent,
             aspect='auto', origin='lower', cmap="inferno")
+    plt.xlim([-10e6, 10e6])
+    plt.ylim([3e9, f_MAX])
     plt.ylabel("$f$ (Hz)")
     plt.xlabel("$kx$ (1/m)")
 

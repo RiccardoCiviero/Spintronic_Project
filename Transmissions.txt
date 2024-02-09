@@ -1,0 +1,674 @@
+
+
+Transverse field=:0.0
+frequency=3200000000.0
+T1z=<xarray.DataArray 'field' ()>
+array(0.16365487)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'z'
+T1y=<xarray.DataArray 'field' ()>
+array(0.14948801)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'y'
+T2z=<xarray.DataArray 'field' ()>
+array(0.16365487)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'z'
+T2y=<xarray.DataArray 'field' ()>
+array(0.14948801)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'y'
+
+
+Transverse field=:3978.8735772973837
+frequency=3200000000.0
+T1z=<xarray.DataArray 'field' ()>
+array(0.16212046)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'z'
+T1y=<xarray.DataArray 'field' ()>
+array(0.14527591)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'y'
+T2z=<xarray.DataArray 'field' ()>
+array(0.16212587)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'z'
+T2y=<xarray.DataArray 'field' ()>
+array(0.14526421)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'y'
+
+
+Transverse field=:19894.367886486918
+frequency=3200000000.0
+T1z=<xarray.DataArray 'field' ()>
+array(0.0075152)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'z'
+T1y=<xarray.DataArray 'field' ()>
+array(0.00282517)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'y'
+T2z=<xarray.DataArray 'field' ()>
+array(0.00751584)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'z'
+T2y=<xarray.DataArray 'field' ()>
+array(0.00282454)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'y'
+
+
+Transverse field=:43767.60935027122
+frequency=3200000000.0
+T1z=<xarray.DataArray 'field' ()>
+array(0.00936198)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'z'
+T1y=<xarray.DataArray 'field' ()>
+array(0.00193749)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'y'
+T2z=<xarray.DataArray 'field' ()>
+array(0.0092166)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'z'
+T2y=<xarray.DataArray 'field' ()>
+array(0.00193162)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'y'
+
+
+Transverse field=:87535.21870054243
+frequency=3200000000.0
+T1z=<xarray.DataArray 'field' ()>
+array(0.00815571)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'z'
+T1y=<xarray.DataArray 'field' ()>
+array(0.00265214)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'y'
+T2z=<xarray.DataArray 'field' ()>
+array(0.00813755)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'z'
+T2y=<xarray.DataArray 'field' ()>
+array(0.00259776)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'y'
+
+
+Transverse field=:175070.43740108487
+frequency=3200000000.0
+T1z=<xarray.DataArray 'field' ()>
+array(0.00295388)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'z'
+T1y=<xarray.DataArray 'field' ()>
+array(0.00246703)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'y'
+T2z=<xarray.DataArray 'field' ()>
+array(0.00298253)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'z'
+T2y=<xarray.DataArray 'field' ()>
+array(0.00240212)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'y'
+
+
+Transverse field=:0.0
+frequency=3500000000.0
+T1z=<xarray.DataArray 'field' ()>
+array(0.00594441)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'z'
+T1y=<xarray.DataArray 'field' ()>
+array(0.00496016)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'y'
+T2z=<xarray.DataArray 'field' ()>
+array(0.00594441)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'z'
+T2y=<xarray.DataArray 'field' ()>
+array(0.00496016)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'y'
+
+
+Transverse field=:3978.8735772973837
+frequency=3500000000.0
+T1z=<xarray.DataArray 'field' ()>
+array(0.00565151)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'z'
+T1y=<xarray.DataArray 'field' ()>
+array(0.00497652)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'y'
+T2z=<xarray.DataArray 'field' ()>
+array(0.00565112)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'z'
+T2y=<xarray.DataArray 'field' ()>
+array(0.00497606)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'y'
+
+
+Transverse field=:19894.367886486918
+frequency=3500000000.0
+T1z=<xarray.DataArray 'field' ()>
+array(0.00027707)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'z'
+T1y=<xarray.DataArray 'field' ()>
+array(0.00017968)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'y'
+T2z=<xarray.DataArray 'field' ()>
+array(0.00027806)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'z'
+T2y=<xarray.DataArray 'field' ()>
+array(0.00017983)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'y'
+
+
+Transverse field=:43767.60935027122
+frequency=3500000000.0
+T1z=<xarray.DataArray 'field' ()>
+array(0.00078918)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'z'
+T1y=<xarray.DataArray 'field' ()>
+array(0.00026726)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'y'
+T2z=<xarray.DataArray 'field' ()>
+array(0.00072038)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'z'
+T2y=<xarray.DataArray 'field' ()>
+array(0.00025605)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'y'
+
+
+Transverse field=:87535.21870054243
+frequency=3500000000.0
+T1z=<xarray.DataArray 'field' ()>
+array(0.00031134)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'z'
+T1y=<xarray.DataArray 'field' ()>
+array(0.00013091)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'y'
+T2z=<xarray.DataArray 'field' ()>
+array(0.00027871)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'z'
+T2y=<xarray.DataArray 'field' ()>
+array(0.000126)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'y'
+
+
+Transverse field=:175070.43740108487
+frequency=3500000000.0
+T1z=<xarray.DataArray 'field' ()>
+array(7.2541241e-05)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'z'
+T1y=<xarray.DataArray 'field' ()>
+array(7.35280463e-05)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'y'
+T2z=<xarray.DataArray 'field' ()>
+array(6.45739758e-05)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'z'
+T2y=<xarray.DataArray 'field' ()>
+array(7.07536333e-05)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'y'
+
+
+Transverse field=:0.0
+frequency=3800000000.0
+T1z=<xarray.DataArray 'field' ()>
+array(0.44439559)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'z'
+T1y=<xarray.DataArray 'field' ()>
+array(0.34559049)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'y'
+T2z=<xarray.DataArray 'field' ()>
+array(0.44439559)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'z'
+T2y=<xarray.DataArray 'field' ()>
+array(0.34559049)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'y'
+
+
+Transverse field=:3978.8735772973837
+frequency=3800000000.0
+T1z=<xarray.DataArray 'field' ()>
+array(0.44049171)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'z'
+T1y=<xarray.DataArray 'field' ()>
+array(0.35902454)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'y'
+T2z=<xarray.DataArray 'field' ()>
+array(0.44050246)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'z'
+T2y=<xarray.DataArray 'field' ()>
+array(0.35901471)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'y'
+
+
+Transverse field=:19894.367886486918
+frequency=3800000000.0
+T1z=<xarray.DataArray 'field' ()>
+array(0.23441885)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'z'
+T1y=<xarray.DataArray 'field' ()>
+array(0.20325319)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'y'
+T2z=<xarray.DataArray 'field' ()>
+array(0.2343664)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'z'
+T2y=<xarray.DataArray 'field' ()>
+array(0.20335298)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'y'
+
+
+Transverse field=:43767.60935027122
+frequency=3800000000.0
+T1z=<xarray.DataArray 'field' ()>
+array(0.00100208)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'z'
+T1y=<xarray.DataArray 'field' ()>
+array(0.00098013)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'y'
+T2z=<xarray.DataArray 'field' ()>
+array(0.00136729)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'z'
+T2y=<xarray.DataArray 'field' ()>
+array(0.0011668)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'y'
+
+
+Transverse field=:87535.21870054243
+frequency=3800000000.0
+T1z=<xarray.DataArray 'field' ()>
+array(0.00071807)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'z'
+T1y=<xarray.DataArray 'field' ()>
+array(0.00086016)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'y'
+T2z=<xarray.DataArray 'field' ()>
+array(0.0011095)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'z'
+T2y=<xarray.DataArray 'field' ()>
+array(0.00119496)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'y'
+
+
+Transverse field=:175070.43740108487
+frequency=3800000000.0
+T1z=<xarray.DataArray 'field' ()>
+array(0.00076767)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'z'
+T1y=<xarray.DataArray 'field' ()>
+array(0.00061971)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'y'
+T2z=<xarray.DataArray 'field' ()>
+array(0.00102503)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'z'
+T2y=<xarray.DataArray 'field' ()>
+array(0.0008239)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'y'
+
+
+Transverse field=:0.0
+frequency=4000000000.0
+T1z=<xarray.DataArray 'field' ()>
+array(0.49777988)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'z'
+T1y=<xarray.DataArray 'field' ()>
+array(0.46640319)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'y'
+T2z=<xarray.DataArray 'field' ()>
+array(0.49777988)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'z'
+T2y=<xarray.DataArray 'field' ()>
+array(0.46640319)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'y'
+
+
+Transverse field=:3978.8735772973837
+frequency=4000000000.0
+T1z=<xarray.DataArray 'field' ()>
+array(0.48242863)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'z'
+T1y=<xarray.DataArray 'field' ()>
+array(0.47140384)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'y'
+T2z=<xarray.DataArray 'field' ()>
+array(0.48239719)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'z'
+T2y=<xarray.DataArray 'field' ()>
+array(0.47129032)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'y'
+
+
+Transverse field=:19894.367886486918
+frequency=4000000000.0
+T1z=<xarray.DataArray 'field' ()>
+array(0.40629236)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'z'
+T1y=<xarray.DataArray 'field' ()>
+array(0.38509618)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'y'
+T2z=<xarray.DataArray 'field' ()>
+array(0.40624394)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'z'
+T2y=<xarray.DataArray 'field' ()>
+array(0.47802499)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'y'
+
+
+Transverse field=:43767.60935027122
+frequency=4000000000.0
+T1z=<xarray.DataArray 'field' ()>
+array(0.04747343)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'z'
+T1y=<xarray.DataArray 'field' ()>
+array(0.04028589)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'y'
+T2z=<xarray.DataArray 'field' ()>
+array(0.0731342)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'z'
+T2y=<xarray.DataArray 'field' ()>
+array(0.08112673)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'y'
+
+
+Transverse field=:87535.21870054243
+frequency=4000000000.0
+T1z=<xarray.DataArray 'field' ()>
+array(0.00098765)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'z'
+T1y=<xarray.DataArray 'field' ()>
+array(0.00064224)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'y'
+T2z=<xarray.DataArray 'field' ()>
+array(0.00177375)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'z'
+T2y=<xarray.DataArray 'field' ()>
+array(0.00160724)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'y'
+
+
+Transverse field=:175070.43740108487
+frequency=4000000000.0
+T1z=<xarray.DataArray 'field' ()>
+array(0.00162878)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'z'
+T1y=<xarray.DataArray 'field' ()>
+array(0.00037827)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'y'
+T2z=<xarray.DataArray 'field' ()>
+array(0.00282302)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'z'
+T2y=<xarray.DataArray 'field' ()>
+array(0.00091135)
+Coordinates:
+    y        float64 0.0
+    z        float64 2.5e-08
+    vdims    <U1 'y'
+
+

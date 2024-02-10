@@ -16,7 +16,7 @@ Oe = 1000/(4*np.pi)     # conversion Oe->A/m 79.577471/ 1 mT->10 Oe
 m0 = (1, 0, 0)   # Initial reduced magnetization
 Hx=550 * Oe
 Hy=0
-Hy_list = [0, 50, 250, 550, 1100, 2200]
+Hy_list = [250,550,1100]
 Hy_list = [Hy * Oe for Hy in Hy_list]
 Hz=0
 
@@ -49,9 +49,9 @@ H_RF_val=10 * Oe
 mn = oc.MinDriver()           # minimization driver
 td = oc.TimeDriver()          # time driver
 
-T = 100e-9 #100e-9
-f_MAX = 4e9
-f_MAX_list=[3.2e9, 3.5e9, 3.8e9, 4e9]
+T = 150e-9 #100e-9
+f_MAX = 8e9
+f_MAX_list= [8e9]
 f_Nyquist = 2*f_MAX
 n_Nyquist = T*f_Nyquist
 n_oversampling = 50
@@ -157,7 +157,7 @@ def Hspace_RF(point):
 
 def injectRF(mesh, system, freq=f_MAX):
     H_RF = df.Field(mesh, nvdim=3, value=Hspace_RF)
-    zemRF = mm.Zeeman(H=H_RF, func='sin', f=freq, t0=T/sampling, name='RF')
+    zemRF = mm.Zeeman(H=H_RF, func='sinc', f=freq, t0=T/sampling, name='RF')
     try:
         system.energy += zemRF
     finally:
@@ -208,8 +208,8 @@ def dataProcessing(side="all"):
     return m_fft_x, m_fft_y, m_fft_z
 
 def getDispersions(m_fft_x,m_fft_y,m_fft_z,side="full"):
-    xbounds=(-1/(5*cx),1/(5*cx))
-    ybounds=(0,f_MAX)
+    xbounds=(-1e7,1e7)
+    ybounds=(3e9,f_MAX)
     # Show the intensity plot of the 2D FFT
 
     #mx
@@ -411,7 +411,7 @@ with open(f"./Transmissions.csv",'a') as f:
 for freq in f_MAX_list:
     for Hy_t in Hy_list:
         
-        sysName=f"P3_{int(T*1e9)}ns_{int(freq*1e-6)}kHz_{int(Hy_t/Oe)}Oe"
+        sysName=f"P3_{int(T*1e9)}ns_{int(freq*1e-6)}MHz_{int(Hy_t/Oe)}Oe"
         system, region, mesh, alpha = defSys()
 
         def Hspace_DC(point):
@@ -433,30 +433,30 @@ for freq in f_MAX_list:
             os.mkdir(path)
         checkSys(system)
         injectRF(mesh,system,freq)
-        if Hy_t==0:
-            data=md.Data(sysName) #this contains all the drives up to now. [-1] means the last drive. Check the folder "Py_disk_FMR"
-            array=data[-1].to_xarray()
-            mz_BL=np.max(array[:, int((3/8*l)/cx), int(w/2/cy), 0, 2])
-            my_BL=np.max(array[:, int((3/8*l)/cx), int(w/2/cy), 0, 1])
+        # if Hy_t==0:
+        #     data=md.Data(sysName) #this contains all the drives up to now. [-1] means the last drive. Check the folder "Py_disk_FMR"
+        #     array=data[-1].to_xarray()
+        #     mz_BL=np.max(array[:, int((3/8*l)/cx), int(w/2/cy), 0, 2])
+        #     my_BL=np.max(array[:, int((3/8*l)/cx), int(w/2/cy), 0, 1])
         m_fft_x, m_fft_y, m_fft_z=dataProcessing()
         getDispersions(m_fft_x, m_fft_y, m_fft_z)
         m_fft_x, m_fft_y, m_fft_z=dataProcessing("left")
         getDispersions(m_fft_x, m_fft_y, m_fft_z,"left")
-        mx0,my0,mz0=getTimeEvol("left")
+        # mx0,my0,mz0=getTimeEvol("left")
         m_fft_x, m_fft_y, m_fft_z=dataProcessing("right")
         getDispersions(m_fft_x, m_fft_y, m_fft_z,"right")
-        getTimeEvol("right")
+        # getTimeEvol("right")
         m_fft_x, m_fft_y, m_fft_z=dataProcessing("center")
         getDispersions(m_fft_x, m_fft_y, m_fft_z,"center")
-        getTimeEvol("center")
-        getSpaceEvol(mx0,my0,mz0)
-        a,b,c,d=getTramissions((my_BL,mz_BL))
-        a = float(a)
-        b = float(b)
-        c = float(c)
-        d = float(d)
-        with open(f"./Transmissions.csv",'a') as f:
-            f.write(f"{Hy_t},{freq},{a},{b},{c},{d}\n")
+        # getTimeEvol("center")
+        # getSpaceEvol(mx0,my0,mz0)
+        # a,b,c,d=getTramissions((my_BL,mz_BL))
+        # a = float(a)
+        # b = float(b)
+        # c = float(c)
+        # d = float(d)
+        # with open(f"./Transmissions.csv",'a') as f:
+        #     f.write(f"{Hy_t},{freq},{a},{b},{c},{d}\n")
       
       
       

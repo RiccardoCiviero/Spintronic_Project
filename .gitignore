@@ -1,2 +1,9 @@
 */
 *.zip
+*.png
+*.jpg
+*.pdf
+*.svg
+*.eps
+!Heinz et al. - 2020 - Propagation of spin-waves packets in individual na.pdf
+!consegna.pdf

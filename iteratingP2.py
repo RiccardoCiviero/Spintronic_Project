@@ -1,3 +1,5 @@
+#this one iterates P2. It's quite messy and full of random comments, but does exactly what it says on the tin
+
 import oommfc as oc
 import discretisedfield as df
 import micromagneticmodel as mm

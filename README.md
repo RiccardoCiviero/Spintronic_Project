@@ -5,6 +5,8 @@ Here a brief introduction to the various scripts you can find in the repository:
 
 - "P1.ipynb": first point of the excercise. It is a standalone Jupyter Notebook, requires Ubermag.
 
+- "P1_antenna.ipynb": first point with realistic antenna geometry.
+
 - "P2.ipynb": second point of the excercise. It is a standalone Jupyter Notebook, requires Ubermag.
 
 - "P3.ipynb": third point of the excercise. It is a standalone Jupyter Notebook, requires Ubermag.
